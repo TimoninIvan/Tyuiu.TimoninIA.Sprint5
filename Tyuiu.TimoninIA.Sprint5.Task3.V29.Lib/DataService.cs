@@ -6,7 +6,7 @@ namespace Tyuiu.TimoninIA.Sprint5.Task3.V29.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask3.bin";
+            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask3.bin" });
             double z = Math.Pow(x, 3) + 2 * Math.Pow(x, 2) + 5 * x + 4;
             z = Math.Round(z, 3);
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
